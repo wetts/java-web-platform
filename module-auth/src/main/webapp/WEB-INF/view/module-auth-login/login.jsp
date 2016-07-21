@@ -1,4 +1,4 @@
-<%@ include file="/WEB-INF/common/taglibs.jsp" %>
+<%@ include file="/WEB-INF/common/taglibs-auth.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>

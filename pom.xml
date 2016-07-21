@@ -13,6 +13,8 @@
     <module>application</module>
     <module>module-mq</module>
     <module>module-persistent</module>
+    <module>crawler</module>
+    <module>httpKeepAlive</module>
   </modules>
 
   <properties>
@@ -35,6 +37,7 @@
     <mockito.version>1.10.19</mockito.version>
     <derby.version>10.7.1.1</derby.version>
     <jackson.version>2.7.3</jackson.version>
+    <jedis.version>2.6.2</jedis.version>
     <fastjson.version>1.1.40</fastjson.version>
     <guava.version>17.0</guava.version>
     <commons-lang3.version>3.3.2</commons-lang3.version>
