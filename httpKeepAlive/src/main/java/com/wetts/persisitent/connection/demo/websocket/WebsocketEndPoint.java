@@ -1,4 +1,4 @@
-package com.wetts.persisitent.connection.websocket;
+package com.wetts.persisitent.connection.demo.websocket;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;

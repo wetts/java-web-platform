@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>ServerTimeMonitorServlet</servlet-name>
-    <servlet-class>com.wetts.persisitent.connection.stream.servlet.ServerTimeMonitorServlet</servlet-class>
+    <servlet-class>com.wetts.persisitent.connection.demo.stream.servlet.ServerTimeMonitorServlet</servlet-class>
     <init-param>
       <param-name>interval</param-name>
       <param-value>1</param-value>

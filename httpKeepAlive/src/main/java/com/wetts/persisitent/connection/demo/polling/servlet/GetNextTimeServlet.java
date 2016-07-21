@@ -1,4 +1,4 @@
-package com.wetts.persisitent.connection.polling.servlet;
+package com.wetts.persisitent.connection.demo.polling.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

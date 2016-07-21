@@ -1,4 +1,4 @@
-package com.wetts.persisitent.connection.stream.servlet;
+package com.wetts.persisitent.connection.demo.stream.servlet;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

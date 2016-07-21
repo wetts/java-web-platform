@@ -1,4 +1,4 @@
-package com.wetts.persisitent.connection.websocket.chatroom;
+package com.wetts.persisitent.connection.demo.websocket.chatroom;
 
 import java.io.IOException;
 import java.util.Set;

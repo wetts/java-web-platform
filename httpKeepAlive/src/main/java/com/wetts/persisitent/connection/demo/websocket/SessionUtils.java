@@ -1,4 +1,4 @@
-package com.wetts.persisitent.connection.websocket;
+package com.wetts.persisitent.connection.demo.websocket;
 
 import javax.websocket.Session;
 import java.util.Map;

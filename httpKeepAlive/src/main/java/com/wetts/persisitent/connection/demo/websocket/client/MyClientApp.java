@@ -1,4 +1,4 @@
-package com.wetts.persisitent.connection.websocket.client;
+package com.wetts.persisitent.connection.demo.websocket.client;
 
 import javax.websocket.ContainerProvider;
 import javax.websocket.DeploymentException;
