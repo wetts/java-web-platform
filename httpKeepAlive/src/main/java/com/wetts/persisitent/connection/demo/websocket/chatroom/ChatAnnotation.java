@@ -15,7 +15,7 @@ import javax.websocket.server.ServerEndpoint;
 /**
  * Created by linger on 2016/7/21.
  */
-@ServerEndpoint(value = "/chat")
+@ServerEndpoint(value = "/websocket/chat")
 public class ChatAnnotation {
 
     private static final String GUEST_PREFIX = "Guest";
