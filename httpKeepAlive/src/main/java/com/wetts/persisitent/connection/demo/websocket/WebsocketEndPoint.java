@@ -5,7 +5,7 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
 /**
- * Created by linger on 2016/7/21.
+ * Created by wetts on 2016/7/21.
  * <p>
  * 功能说明：websocket处理类, 使用J2EE7的标准
  * 切忌直接在该连接处理类中加入业务处理代码

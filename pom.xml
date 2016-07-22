@@ -41,6 +41,10 @@
     <fastjson.version>1.1.40</fastjson.version>
     <guava.version>17.0</guava.version>
     <commons-lang3.version>3.3.2</commons-lang3.version>
+
+    <commons-httpclient.version>3.1</commons-httpclient.version>
+    <htmlparser.version>2.1</htmlparser.version>
+    <crawler4j.version>4.2</crawler4j.version>
   </properties>
 
   <name>Maven</name>

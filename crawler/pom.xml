@@ -17,11 +17,22 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>edu.uci.ics</groupId>
             <artifactId>crawler4j</artifactId>
-            <version>4.2</version>
+            <version>${crawler4j.version}</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>commons-httpclient</groupId>-->
+            <!--<artifactId>commons-httpclient</artifactId>-->
+            <!--<version>${commons-httpclient.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.htmlparser</groupId>-->
+            <!--<artifactId>htmlparser</artifactId>-->
+            <!--<version>${htmlparser.version}</version>-->
+        <!--</dependency>-->
     </dependencies>
     <build>
         <finalName>crawler</finalName>
