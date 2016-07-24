@@ -25,11 +25,11 @@ public class ZhihuCrawler extends WebCrawler {
         String href = url.getURL().toLowerCase();
         // Ignore the url if it has an extension that matches our defined set of image extensions.
         if (QUESTION_EXTENSIONS.matcher(href).matches()) {
-            return false;
+            return true;
         }
 
         // Only accept the url if it is in the "www.ics.uci.edu" domain and protocol is "http".
-        return href.startsWith("http://www.zhihu.com/");
+        return false;
     }
 
     /**

@@ -31,6 +31,12 @@
             <version>${crawler4j.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>${htmlUnit.version}</version>
+        </dependency>
+
         <!--<dependency>-->
             <!--<groupId>commons-httpclient</groupId>-->
             <!--<artifactId>commons-httpclient</artifactId>-->
