@@ -68,12 +68,12 @@ public class DynamicDatabasePool {
                 }
                 return readDatasourceRoute.random();
             case WRITE_DATASOURCE:
-                if(readDatasourceRoute == null) {
+                if(writeDatasourceRoute == null) {
                     throw new NoDatabaseRouteException();
                 }
                 return writeDatasourceRoute.random();
             case READ_WRITE_DATASOURCE:
-                if(readDatasourceRoute == null) {
+                if(readWriteDatasourceRoute == null) {
                     throw new NoDatabaseRouteException();
                 }
                 return readWriteDatasourceRoute.random();

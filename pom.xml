@@ -42,6 +42,9 @@
         <mysql.version>5.1.35</mysql.version>
         <druid.version>1.0.23</druid.version>
         <jedis.version>2.6.2</jedis.version>
+        <mybatis.version>3.4.1</mybatis.version>
+        <mybatis-spring.version>1.3.0</mybatis-spring.version>
+        <pagehelper.version>4.1.6</pagehelper.version>
 
         <!-- 日志 -->
         <slf4j.version>1.7.7</slf4j.version>

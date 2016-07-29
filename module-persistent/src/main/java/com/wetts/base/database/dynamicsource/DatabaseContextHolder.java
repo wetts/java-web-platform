@@ -5,10 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * @author Chenz
- * @version V1.0
+ * @author wetts
  * @Description: 多数据源上下文处理类
- * @date Nov 13, 2014 1:03:21 PM
+ * @date 2016/07/26
  */
 public class DatabaseContextHolder {
 

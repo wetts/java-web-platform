@@ -1,6 +1,5 @@
 package com.wetts.base.dynamicdatasource;
 
-import com.wetts.base.database.dynamicsource.DynamicDatabasePool;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

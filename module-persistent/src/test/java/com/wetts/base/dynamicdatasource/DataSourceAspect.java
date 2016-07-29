@@ -4,6 +4,7 @@ import com.wetts.base.database.dynamicsource.DatabaseContextHolder;
 import com.wetts.base.database.dynamicsource.DynamicDatabasePool;
 import com.wetts.base.database.dynamicsource.annotation.DataSourceName;
 import com.wetts.base.database.dynamicsource.annotation.DataSourcePolicy;
+import com.wetts.base.database.dynamicsource.exception.NoDatabaseRouteException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -36,7 +37,11 @@ public class DataSourceAspect {
             String dbName = "";
             switch (dsp.dataSourceSelectPolicy()) {
                 case AUTO:
-                    dbName = dynamicDatabasePool.getRandomDataSourceName(dsp.type());
+                    try {
+                        dbName = dynamicDatabasePool.getRandomDataSourceName(dsp.type());
+                    } catch (NoDatabaseRouteException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case MANUAL:
                     DataSourceName dsn = method.getAnnotation(DataSourceName.class);
