@@ -13,18 +13,12 @@ public class DynamicDataSourceRouting extends AbstractRoutingDataSource {
 
     private static final Logger logger = LoggerFactory.getLogger(DynamicDataSourceRouting.class);
 
-    private DynamicDatabasePool databasePool;
-
-    public DynamicDataSourceRouting() {
-        if (databasePool == null || databasePool.getAllSources() == null) {
+    public DynamicDataSourceRouting(DynamicDatabasePool dynamicDatabasePool) {
+        if (dynamicDatabasePool == null || dynamicDatabasePool.getAllSources() == null) {
             logger.error("数据源注入失败");
             throw new RuntimeException("数据源注入失败");
         }
-        super.setTargetDataSources(databasePool.getAllSources());
-    }
-
-    public void setDatabasePool(DynamicDatabasePool databasePool) {
-        this.databasePool = databasePool;
+        super.setTargetDataSources(dynamicDatabasePool.getAllSources());
     }
 
     @Override

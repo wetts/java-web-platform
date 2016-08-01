@@ -7,6 +7,7 @@
          http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:component-scan base-package="com.wetts.base.dynamicdatasource"/>
+    <context:component-scan base-package="com.wetts.base.pagehelper"/>
 
     <!-- 激活自动代理功能 -->
     <aop:aspectj-autoproxy proxy-target-class="true"/>
@@ -65,7 +66,7 @@
 
     <bean id="writeDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
-        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test2"/>
         <property name="username" value="root"/>
         <property name="password" value=""/>
 
@@ -94,6 +95,27 @@
 
         <!-- 配置监控统计拦截的filters -->
         <property name="filters" value="stat"/>
+    </bean>
+
+    <bean id="dataSource" class="com.wetts.base.database.dynamicsource.DynamicDataSourceRouting">
+        <constructor-arg type="com.wetts.base.database.dynamicsource.DynamicDatabasePool" ref="databasePool"/>
+    </bean>
+
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations">
+            <array>
+                <value>classpath:mapper/CountryMapper.xml</value>
+                <value>classpath:mapper/TestTableMapper.xml</value>
+            </array>
+        </property>
+    </bean>
+
+    <!-- 配置映射器 -自动扫描 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.wetts.base.pagehelper" />
+        <!-- optional unless there are multiple session factories defined -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 
 </beans>
