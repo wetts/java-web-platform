@@ -427,7 +427,7 @@ public class ImageUtils {
             g.setPaint(this.bgcolor);
             g.fillRect(0, 0, newWidth, newHeight);
         }
-		/*
+        /*
 		 * TODO consider RenderingHints to use. The following are hints which
 		 * have been chosen to give decent image quality. In the future, there
 		 * may be a need to have a way to change these settings.

@@ -1,0 +1,50 @@
+1> Java命名规范
+		可以由数字、字母、下划线（_）、美元符号（$）来组成。首字母不能用数字。
+			工程名：一般首字母小写，驼峰
+			包名：小写，“公司域名倒写.项目名.功能名”
+			类名：首字母大写，驼峰
+			方法名：首字母小写，驼峰
+			变量名：首字母小写，驼峰
+			常量名：全大写
+2> Java中的变量
+	实例变量：属于对象的。不用static修饰。
+	静态变量：属于类的。用static修饰。
+	成员变量 = 实例变量 + 静态变量
+		ps:成员变量可以不用初始化，不初始化使用则自动赋值0；
+		    局部变量必须初始化，不初始化不能用。
+3> Java中的名词
+	JDK -- Java Development Kit (Java开发工具包)
+	JRE -- Java Runtime Environment (Java运行环境)
+	JVM -- Java Virtual Machines (Java虚拟机)
+	class(类)
+	instance(实例) == object(对象)，		实例化 == 创建对象
+	对象的属性 == 实例变量，		类的属性 == 静态变量
+	EOF -- end of file
+	FIFO -- first input first output
+	FILO -- first input last output
+4> Java程序的注释
+	1) // 单行注释
+	2) /* */ 堆行注释
+	3) /** */ 文档注释，一般加载类、方法、常量的前面。
+5> Java基础类型
+	byte(字节) char(字符) short int long float double boolean
+	byte = 2^8
+	char = 2字节
+	short = 2字节
+	int = 4字节
+	long = 8字节
+	float = 4字节
+	double = 8字节
+6> Java包装类
+	Byte Character Short Integer Long Float Double Boolean
+	包装类是final的。
+7> JDK1.5新特性
+	1) 自动拆装箱：事实上JVM不支持该特性，自动拆装箱只是编译器在编译过程中的"预处理"操作。编译器在看到需要在包装类与基本类型之间转换时，会在编译为字节码时进行改变。
+	2) 增强for循环
+	3) 泛型：泛型在集合中的应用是用来约束集合中元素的类型。
+		ps:泛型不能用基本类型修饰，只能用引用类型。
+8> Code
+	编码规范：
+		1) ISO8859-1: 西文编码就是ASCII,一个英文字母一个字节。
+		2）GBK:中文编码是GB2312的超集, 1-2变长编码, 英文与ASCII一致, 中文2个字节。
+		3）UTF-8: 1到4字节的变长编码, 英文与ascII一致， 中文3个字节。

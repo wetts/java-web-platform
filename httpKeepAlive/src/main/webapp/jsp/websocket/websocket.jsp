@@ -41,7 +41,7 @@
             return false;
         }
 
-        webSocket = new WebSocket("ws://127.0.0.1:10888/websocket.ws/" + relationId + "/" + userCode);
+        webSocket = new WebSocket("ws://" + window.location.host + "/websocket.ws/" + relationId + "/" + userCode);
 
         // 收到服务端消息
         webSocket.onmessage = function (msg) {

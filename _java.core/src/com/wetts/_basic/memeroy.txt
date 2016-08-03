@@ -1,0 +1,7 @@
+内存区域被分为：
+	1> Program Counter Register(程序计数器)：线程私有。
+	2> Java Virtual Machine Stacks(Java虚拟机栈)：线程私有。储存局部变量。
+		当进入一个方法中时，会分配给这个方法一个Stack Frame(栈帧)。
+	3> Heap(堆)：线程共享。储存实例化出来的对象和数组。
+	4> Method Area(方法区)：线程共享。存储已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据。
+		方法区中有一块内存为：Runtime Constant Pool(运行时常量池)，用来储存常量和字符串字面量。

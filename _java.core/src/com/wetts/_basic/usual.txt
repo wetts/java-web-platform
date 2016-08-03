@@ -1,0 +1,10 @@
+1> Java中，凡是使用两个数字描述范围时，基本都是含头不含尾的("[	)")。
+2> Arrays.copyOf方法一般被用来改变数组的大小。
+3> System.ArrayCopy方法一般用做两个已知数组的复制。
+4> 0～n的对应转换，一般都用数组来解决。
+5> valueOf。创建包装类对象时，最好用valueOf方法。
+6> Date类现在一般只用来表示某个时刻，不用来计算。用Calender类来代替。
+7> Stream。关闭掉处理流之后，节点流会自动关闭。
+8> Exception。捕获异常中，一般最后要加上catch(Exception e)。子类异常在前，父类异常在后。
+9> Serializable。实现该接口后，要给类加上版本号serialVersionUID(private static final long)。
+10> Thread。建线程，最好用实现Runnable接口的方法。

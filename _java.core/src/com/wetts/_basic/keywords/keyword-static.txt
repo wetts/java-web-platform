@@ -1,0 +1,6 @@
+1> static final修饰的，并且声明和初始化同时完成的成员变量被调用时，不会加载类的static代码块。
+2> static final修饰的，并且声明和初始化同时完成的方法被调用时，会加载类的static代码块。
+3> static修饰变量。则该变量为静态变量，属于所有对象共有，只有一份。
+		static fields can only be declared in static or top level types.
+4> static修饰方法。则该方法为静态方法，不用实例化对象就可以调用。
+6> static修饰的任何东西，都不能调用非static方法或者变量。
