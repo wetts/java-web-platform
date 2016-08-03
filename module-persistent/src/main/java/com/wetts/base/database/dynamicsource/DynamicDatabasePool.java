@@ -24,6 +24,8 @@ public class DynamicDatabasePool {
 
     private static final Logger logger = LoggerFactory.getLogger(DynamicDatabasePool.class);
 
+    private String defaultDataSourceName;
+
     private WeightMeta<String> readDatasourceRoute;
 
     private WeightMeta<String> readWriteDatasourceRoute;
@@ -40,18 +42,27 @@ public class DynamicDatabasePool {
     @Autowired(required = false)
     @Qualifier("writeDataSources")
     public void setWriteDataSources(List<DynamicDatabaseWrapper> writeDataSources) {
+        if(defaultDataSourceName == null && !writeDataSources.isEmpty())
+            defaultDataSourceName = writeDataSources.get(0).getName();
+
         this.resolveDataSources(WRITE_DATASOURCE, writeDataSources);
     }
 
     @Autowired(required = false)
     @Qualifier("readWriteDataSources")
     public void setReadWriteDataSources(List<DynamicDatabaseWrapper> readWriteDataSources) {
+        if(defaultDataSourceName == null && !readWriteDataSources.isEmpty())
+            defaultDataSourceName = readWriteDataSources.get(0).getName();
+
         this.resolveDataSources(READ_WRITE_DATASOURCE, readWriteDataSources);
     }
 
     @Autowired(required = false)
     @Qualifier("readDataSources")
     public void setReadDataSources(List<DynamicDatabaseWrapper> readDataSources) {
+        if(defaultDataSourceName == null && !readDataSources.isEmpty())
+            defaultDataSourceName = readDataSources.get(0).getName();
+
         this.resolveDataSources(READ_DATASOURCE, readDataSources);
     }
 
@@ -81,6 +92,14 @@ public class DynamicDatabasePool {
                 logger.error("数据源类型出错");
                 throw new RuntimeException("数据源类型出错");
         }
+    }
+
+    /**
+     * 获取默认数据源（第一个注入的为默认）
+     * @return
+     */
+    public String getDefaultDataSourceName() {
+        return defaultDataSourceName;
     }
 
     private void resolveDataSources(DataSourceType dataSourceType, List<DynamicDatabaseWrapper> dynamicDatabaseWrapper) {

@@ -9,6 +9,7 @@ import com.wetts.base.pagehelper.TestTable;
 import com.wetts.base.pagehelper.TestTableMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.activation.DataContentHandler;
 
@@ -27,6 +28,7 @@ public class ChangeDataSource {
 
     @DataSourcePolicy(type = DataSourceType.WRITE_DATASOURCE)
     @DataSourceName(value="aaa")
+    @Transactional
     public void chooseOne() {
         System.out.println(countryMapper.selectByPage());
         DatabaseContextHolder.setCustomerType("mkyongList1");

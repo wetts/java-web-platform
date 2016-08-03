@@ -1,4 +1,4 @@
-package com.wetts.base;
+package com.wetts.base.database;
 
 /**
  * @author wetts

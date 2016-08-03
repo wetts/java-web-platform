@@ -19,6 +19,9 @@ public class DynamicDataSourceRouting extends AbstractRoutingDataSource {
             throw new RuntimeException("数据源注入失败");
         }
         super.setTargetDataSources(dynamicDatabasePool.getAllSources());
+
+        // 设置默认数据源
+        DatabaseContextHolder.setCustomerType(dynamicDatabasePool.getDefaultDataSourceName());
     }
 
     @Override

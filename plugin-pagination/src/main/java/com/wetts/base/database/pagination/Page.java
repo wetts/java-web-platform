@@ -8,7 +8,7 @@
 package com.wetts.base.database.pagination;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.wetts.base.Config;
+import com.wetts.base.database.Config;
 import com.wetts.base.util.CookieUtils;
 import org.apache.commons.lang3.StringUtils;
 

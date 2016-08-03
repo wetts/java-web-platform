@@ -1,3 +1,26 @@
+# Add Redis to Mybatis
+1. add in the pom.xml the following dependency:
+```
+<dependencies>
+  ...
+  <dependency>
+    <groupId>org.mybatis.caches</groupId>
+    <artifactId>mybatis-redis</artifactId>
+    <version>1.0.0-beta2</version>
+  </dependency>
+  ...
+</dependencies>
+```
+2. configure it in the mapper XML
+```
+<mapper namespace="org.acme.FooMapper">
+  <cache type="org.mybatis.caches.redis.RedisCache" />
+  ...
+</mapper>
+```
+
+---
+
 # mybatis 自动生成代码
 ## 在 “Command line” 选项中输入“mybatis-generator:generate  -e”
 
@@ -10,6 +33,8 @@
 >> 2. DataSourceSelectPolicy.MANUAL 手动选择
 
 > Type 数据库自动选择类型（DataSourceSelectPolicy 设置为 AUTO 生效）
+
+---
 
 # druid 监控
 ```

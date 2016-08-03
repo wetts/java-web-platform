@@ -7,7 +7,7 @@
  */
 package com.wetts.base.database.pagination.interceptor;
 
-import com.wetts.base.Config;
+import com.wetts.base.database.Config;
 import com.wetts.base.database.pagination.Page;
 import com.wetts.base.database.pagination.dialect.Dialect;
 import com.wetts.base.database.pagination.dialect.db.*;

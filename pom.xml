@@ -15,6 +15,7 @@
         <module>crawler</module>
         <module>httpKeepAlive</module>
         <module>module-spring</module>
+        <module>plugin-pagination</module>
     </modules>
 
     <properties>

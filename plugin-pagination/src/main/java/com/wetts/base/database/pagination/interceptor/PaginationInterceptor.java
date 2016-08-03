@@ -54,7 +54,7 @@ public class PaginationInterceptor extends BaseInterceptor {
             //如果设置了分页对象，则进行分页
             if (page != null && page.getPageSize() != -1) {
 
-                if (org.apache.commons.lang3.StringUtils.isBlank(boundSql.getSql())) {
+                if (StringUtils.isBlank(boundSql.getSql())) {
                     return null;
                 }
                 String originalSql = boundSql.getSql().trim();
