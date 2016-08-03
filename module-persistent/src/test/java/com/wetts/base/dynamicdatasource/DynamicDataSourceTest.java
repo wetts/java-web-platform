@@ -12,7 +12,7 @@ public class DynamicDataSourceTest {
 
     @Test
     public void test() {
-        ApplicationContext ac = new ClassPathXmlApplicationContext("persistent-context-test.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("dynamic-datasource.xml");
         ChangeDataSource cd = ac.getBean("changeDataSource", ChangeDataSource.class);
         cd.chooseOne();
     }

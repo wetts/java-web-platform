@@ -126,7 +126,7 @@
     <!-- 注解配置事务 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
-    <!-- 配置文件配置事务
+    <!-- 配置文件配置事务（配置文件）
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="domain*"/>
@@ -138,5 +138,8 @@
                      pointcut="execution(* com.chou.spring.jdbc.service.JdbcTemplateService.*(..))"/>
     </aop:config>
     -->
+
+    <!-- 注解配置事务（注解） -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>
