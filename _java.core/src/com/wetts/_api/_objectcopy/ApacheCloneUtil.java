@@ -1,4 +1,4 @@
-package com.wetts._api.copy;
+package com.wetts._api._objectcopy;
 
 import java.io.Serializable;
 import java.util.ArrayList;

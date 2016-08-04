@@ -1,4 +1,4 @@
-package com.wetts.game.flappyBird;
+package com.wetts.game.flappybird;
 
 import java.awt.Color;
 import java.awt.Font;

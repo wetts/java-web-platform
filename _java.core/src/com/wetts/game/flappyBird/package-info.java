@@ -6,4 +6,4 @@
  * @created 2015/06/06
  *
  */
-package com.wetts.game.flappyBird;
+package com.wetts.game.flappybird;

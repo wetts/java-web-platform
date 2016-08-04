@@ -1,4 +1,4 @@
-package com.wetts._api.net.tcp;
+package com.wetts._api._socket.net.tcp;
 
 import java.io.BufferedReader;
 import java.io.IOException;

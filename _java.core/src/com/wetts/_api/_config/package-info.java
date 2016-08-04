@@ -6,4 +6,4 @@
  * @created 2015/06/06
  *
  */
-package com.wetts._api.net.udp;
+package com.wetts._api._config;

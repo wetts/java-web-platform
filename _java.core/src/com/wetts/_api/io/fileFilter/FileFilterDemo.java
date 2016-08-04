@@ -18,7 +18,6 @@ public class FileFilterDemo {
 		if (file.isDirectory()) {
 			File[] files = file.listFiles(new FileFilter() {
 
-				@Override
 				public boolean accept(File pathname) {
 					return pathname.getName().startsWith(".");
 				}

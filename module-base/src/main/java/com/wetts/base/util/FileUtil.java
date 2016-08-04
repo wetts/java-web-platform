@@ -1,5 +1,7 @@
 package com.wetts.base.util;
 
+import com.wetts.base.constant.OS;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -7,8 +9,6 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import com.wetts.init.article.constant.ComputerSystem;
 
 /**
  * 文件相关的工具方法
@@ -38,12 +38,12 @@ public class FileUtil {
 	 * @throws IOException
 	 */
 	public static Date getFileCreateTime(File file) {
-		String osName = System.getProperties().getProperty("os.name");
+		OS os = OS.getOS(System.getProperties().getProperty("os.name"));
 		Date strTime = null;
 		if(file.exists() && file.isFile()) {
 			String fileName = file.getName();
 			// Windows 系统，并且文件名中不带空格
-			if(osName.toUpperCase().indexOf(ComputerSystem.WINDOWS.toString()) != -1 && fileName.indexOf(" ") == -1) {
+			if(OS.WINDOWS == os && fileName.indexOf(" ") == -1) {
 				// 如果文件路径中有空格，该方法不适用
 				try {
 					Process p = Runtime.getRuntime().exec("cmd /C dir " + file.getAbsolutePath() + "/tc");

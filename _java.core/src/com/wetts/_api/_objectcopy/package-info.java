@@ -6,4 +6,4 @@
  * @created 2015/06/22
  *
  */
-package com.wetts._api.copy;
+package com.wetts._api._objectcopy;

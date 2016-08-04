@@ -1,4 +1,4 @@
-package com.wetts._api.config.properties;
+package com.wetts._api._config.properties;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

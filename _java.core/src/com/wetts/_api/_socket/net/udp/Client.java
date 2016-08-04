@@ -1,4 +1,4 @@
-package com.wetts._api.net.udp;
+package com.wetts._api._socket.net.udp;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
