@@ -17,6 +17,7 @@
         <module>module-spring</module>
         <module>plugin-pagination</module>
         <module>_java.core</module>
+        <module>_algorithm</module>
     </modules>
 
     <properties>
