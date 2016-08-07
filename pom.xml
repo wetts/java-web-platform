@@ -31,6 +31,7 @@
         <lombok.version>1.16.6</lombok.version>
         <jstl.version>1.2</jstl.version>
         <aspectjweaver.version>1.8.9</aspectjweaver.version>
+
         <shiro.version>1.2.2</shiro.version>
         <mockito.version>1.10.19</mockito.version>
         <derby.version>10.7.1.1</derby.version>

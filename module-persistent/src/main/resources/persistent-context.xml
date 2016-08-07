@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
          http://www.springframework.org/schema/tx
-         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <import resource="spring-context.xml"/>
 
-    <!-- 参数载入 -->
-    <bean id="propertyConfigurer"
-          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath:jdbc.properties</value>
-            </list>
-        </property>
+    <context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
+
+    <bean id="springCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+        <property name="cacheManager" ref="ehcacheManager"/>
+    </bean>
+
+    <!--ehcache-->
+    <bean id="ehcacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:ehcache.xml"/>
     </bean>
 
     <bean id="readDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
-        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
-        <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="url" value="${readDB.url}"/>
+        <property name="username" value="${readDB.username}"/>
+        <property name="password" value="${readDB.password}"/>
 
         <!-- 配置初始化大小、最小、最大 -->
-        <property name="initialSize" value="1"/>
-        <property name="minIdle" value="1"/>
-        <property name="maxActive" value="20"/>
+        <property name="initialSize" value="${readDB.initialSize}"/>
+        <property name="minIdle" value="${readDB.minIdle}"/>
+        <property name="maxActive" value="${readDB.maxActive}"/>
 
         <!-- 配置获取连接等待超时的时间 -->
-        <property name="maxWait" value="60000"/>
+        <property name="maxWait" value="${readDB.maxWait}"/>
 
         <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
-        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${readDB.timeBetweenEvictionRunsMillis}"/>
 
         <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
-        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="minEvictableIdleTimeMillis" value="${readDB.minEvictableIdleTimeMillis}"/>
 
         <property name="validationQuery" value="SELECT 'x'"/>
         <property name="testWhileIdle" value="true"/>
@@ -54,23 +55,23 @@
 
     <bean id="writeDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 基本属性 url、user、password -->
-        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
-        <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="url" value="${writeDB.url}"/>
+        <property name="username" value="${writeDB.username}"/>
+        <property name="password" value="${writeDB.password}"/>
 
         <!-- 配置初始化大小、最小、最大 -->
-        <property name="initialSize" value="1"/>
-        <property name="minIdle" value="1"/>
-        <property name="maxActive" value="20"/>
+        <property name="initialSize" value="${writeDB.initialSize}"/>
+        <property name="minIdle" value="${writeDB.minIdle}"/>
+        <property name="maxActive" value="${writeDB.maxActive}"/>
 
         <!-- 配置获取连接等待超时的时间 -->
-        <property name="maxWait" value="60000"/>
+        <property name="maxWait" value="${writeDB.maxWait}"/>
 
         <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
-        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <property name="timeBetweenEvictionRunsMillis" value="${writeDB.timeBetweenEvictionRunsMillis}"/>
 
         <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
-        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="minEvictableIdleTimeMillis" value="${writeDB.minEvictableIdleTimeMillis}"/>
 
         <property name="validationQuery" value="SELECT 'x'"/>
         <property name="testWhileIdle" value="true"/>
@@ -85,17 +86,27 @@
         <property name="filters" value="stat"/>
     </bean>
 
-    <bean id="dataSource" class="com.wetts.base.database.dynamicsource.DynamicDataSourceRouting">
-        <property name="targetDataSources">
-            <map key-type="java.lang.String">
-                <!-- write -->
-                <entry key="write" value-ref="writeDataSource"/>
-                <!-- read -->
-                <entry key="read" value-ref="readDataSource"/>
-            </map>
+    <bean id="databasePool" class="com.wetts.base.database.dynamicsource.DynamicDatabasePool">
+        <property name="writeDataSources">
+            <list>
+                <bean class="com.wetts.base.database.dynamicsource.DynamicDatabaseWrapper">
+                    <property name="name" value="writeDB" />
+                    <property name="dateSource" ref="readDataSource" />
+                </bean>
+            </list>
         </property>
-        <property name="defaultTargetDataSource" ref="readDataSource"/>
+        <property name="readWriteDataSources">
+            <list>
+                <bean class="com.wetts.base.database.dynamicsource.DynamicDatabaseWrapper">
+                    <property name="name" value="readDB" />
+                    <property name="dateSource" ref="writeDataSource" />
+                </bean>
+            </list>
+        </property>
+    </bean>
 
+    <bean id="dataSource" class="com.wetts.base.database.dynamicsource.DynamicDataSourceRouting">
+        <constructor-arg type="com.wetts.base.database.dynamicsource.DynamicDatabasePool" ref="databasePool"/>
     </bean>
 
     <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
@@ -122,9 +133,6 @@
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-
-    <!-- 注解配置事务 -->
-    <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!-- 配置文件配置事务（配置文件）
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
