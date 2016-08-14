@@ -18,6 +18,8 @@
         <module>plugin-pagination</module>
         <module>_java.core</module>
         <module>_algorithm</module>
+        <module>_design.pattern</module>
+        <module>_restful</module>
     </modules>
 
     <properties>
