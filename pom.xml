@@ -18,6 +18,7 @@
         <module>plugin-pagination</module>
         <module>_java.core</module>
         <module>_algorithm</module>
+        <module>plugin-poi</module>
     </modules>
 
     <properties>
@@ -71,6 +72,10 @@
         <javax.el-api.version>3.0.0</javax.el-api.version>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
         <jsp-api.version>2.0</jsp-api.version>
+
+        <!-- Java API To Access Microsoft Format Files -->
+        <poi.version>3.9</poi.version>
+        <poi-ooxml.version>3.15-beta2</poi-ooxml.version>
     </properties>
 
     <name>Maven</name>

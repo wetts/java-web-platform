@@ -1,4 +1,6 @@
-package com.wetts.algorithm.traversal.binarytree;
+package com.wetts.algorithm.traversal.binarytree.depth;
+
+import com.wetts.algorithm.traversal.binarytree.TreeNode;
 
 import java.util.Stack;
 
