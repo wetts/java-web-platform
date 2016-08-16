@@ -91,7 +91,7 @@ public class EmployeeController {
 		return list;
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/emps", headers="Accept=application/atom+xml")
+	@RequestMapping(method=RequestMethod.GET, value="/empsAtom", headers="Accept=application/atom+xml")
 	public @ResponseBody Feed getEmpFeed() {
 		List<Employee> employees = employeeDS.getAll();
 		return AtomUtil.employeeFeed(employees, jaxb2Mashaller);

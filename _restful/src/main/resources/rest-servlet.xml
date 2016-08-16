@@ -43,8 +43,10 @@
             <bean class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
                 <property name="mediaTypes">
                     <map>
+                        <entry key="atom" value="application/atom+xml"/>
+                        <entry key="json" value="application/json"/>
                         <entry key="xml" value="application/xml"/>
-                        <entry key="html" value="text/html;charset=UTF-8"/>
+                        <entry key="html" value="text/html"/>
                     </map>
                 </property>
             </bean>

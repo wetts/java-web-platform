@@ -39,7 +39,7 @@ public class EmployeeClient {
 		HttpEntity<String> entity = prepareGet(MediaType.APPLICATION_XML);
 
 		ResponseEntity<EmployeeList> response = rest.exchange(
-				"http://localhost:8080/service/emps", HttpMethod.GET,
+				"http://localhost:8080/service/emps.xml", HttpMethod.GET,
 				entity, EmployeeList.class);
 
 		EmployeeList employees = response.getBody();
@@ -52,7 +52,7 @@ public class EmployeeClient {
 		HttpEntity<String> entity = prepareGet(MediaType.APPLICATION_ATOM_XML);
 
 		ResponseEntity<Feed> response = rest.exchange(
-				"http://localhost:8080/service/emps", HttpMethod.GET,
+				"http://localhost:8080/service/empsAtom.atom", HttpMethod.GET,
 				entity, Feed.class);
 
 		WireFeed atomFeed = response.getBody();
@@ -68,7 +68,7 @@ public class EmployeeClient {
 		HttpEntity<String> entity = prepareGet(MediaType.APPLICATION_JSON);
 
 		ResponseEntity<EmployeeList> response = rest.exchange(
-				"http://localhost:8080/service/emps", HttpMethod.GET,
+				"http://localhost:8080/service/emps.json", HttpMethod.GET,
 				entity, EmployeeList.class);
 
 		EmployeeList employees = response.getBody();
