@@ -10,15 +10,22 @@
         <module>module-base</module>
         <module>module-auth</module>
         <module>module-web</module>
-        <module>application</module>
         <module>module-persistent</module>
-        <module>crawler</module>
-        <module>httpKeepAlive</module>
         <module>module-spring</module>
+
         <module>plugin-pagination</module>
+        <module>plugin-poi</module>
+
+        <module>application</module>
+        <module>httpKeepAlive</module>
+        <module>crawler</module>
+
         <module>_java.core</module>
         <module>_algorithm</module>
-        <module>plugin-poi</module>
+        <module>_design.pattern</module>
+        <module>_restful</module>
+        <module>_parse.xml</module>
+        <module>_parse.json</module>
     </modules>
 
     <properties>
@@ -37,8 +44,6 @@
 
         <mockito.version>1.10.19</mockito.version>
         <derby.version>10.7.1.1</derby.version>
-        <jackson.version>2.7.3</jackson.version>
-        <fastjson.version>1.1.40</fastjson.version>
         <guava.version>17.0</guava.version>
         <commons.fileupload.version>1.3.1</commons.fileupload.version>
         <commons.io.version>2.2</commons.io.version>
@@ -70,6 +75,14 @@
         <htmlparser.version>2.1</htmlparser.version>
         <crawler4j.version>4.2</crawler4j.version>
         <htmlUnit.version>2.22</htmlUnit.version>
+
+        <!-- XML操作 -->
+        <dom4j.version>1.6.1</dom4j.version>
+        <jdom.version>1.1.3</jdom.version>
+
+        <!-- JSON操作 -->
+        <jackson.version>2.7.3</jackson.version>
+        <fastjson.version>1.1.40</fastjson.version>
 
         <!-- 不需要打包的 -->
         <javax.el-api.version>3.0.0</javax.el-api.version>
