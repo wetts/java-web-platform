@@ -1,4 +1,4 @@
-### 1. 防火墙规则查看、添加、删除和修改
+## 1. 防火墙规则查看、添加、删除和修改
 > 1. 查看<br>
 > <code>iptables -nL --line-number</code>
 >> <code>iptables -nvL –line-number</code><br><br>
@@ -23,7 +23,7 @@
 >> 将第三条规则改为ACCEPT：<br>
 >> <code>iptables -R INPUT 3 -j ACCEPT</code><br>
 
-### 2. 和本地机器进行文件的交互
+## 2. 和本地机器进行文件的交互
 - sz：将选定的文件发送（send）到本地机器<br>
 > -y: 覆盖下载<br>
 - rz：运行该命令会弹出一个文件选择窗口，从本地选择文件上传到服务器(receive)
@@ -31,11 +31,11 @@
 > -b: 以二进制方式，默认为文本方式<br>
 > -e: 对所有控制字符转义
 
-### 3. 切换用户
+## 3. 切换用户
 - su: 用户切换的命令
 > su [user]切换到其他用户，但是不切换环境变量，su - [user]则是完整的切换到新的用户环境
 
-### 4. 远程登陆到*nux
+## 4. 远程登陆到*nux
 - 免密登陆:
 1. 基于口令的安全验证
 #### 流程:
@@ -132,3 +132,19 @@ ssh-add -s pkcs11 ssh-add -e pkcs11
 1. 把专用密钥添加到 ssh-agent 的高速缓存中： ssh-add ~/.ssh/id_dsa
 2. 从ssh-agent中删除密钥： ssh-add -d ~/.ssh/id_xxx.pub
 3. 查看ssh-agent中的密钥： ssh-add -l
+
+## 5. 文本处理
+按日期查找时间段的nginx日志
+```
+sed -n "/14\/Jul\/2015:00:00:00/,/15\/Jul\/2015:15:00:00/"p access.log > time_access.log
+```
+
+查找504错误的页面和数量的nginx日志
+``` 
+awk '($9 ~ /504/)' time_access.log | awk '{print $7}' | sort | uniq -c | sort -rn > 504.log
+```
+
+查找访问最多的20个IP及访问次数的nginx日志
+```
+awk '{print $1}' time_access.log | sort | uniq -c | sort -n -k 1 -r | head -n 20 > top.log
+```

@@ -1,7 +1,7 @@
 package com.wetts.parserjson.jackson;
 
-import parserJson.ParserJson;
-import parserJson.Person;
+import com.wetts.parserjson.ParserJson;
+import com.wetts.parserjson.Person;
 
 public class Client {
 

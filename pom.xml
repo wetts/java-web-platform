@@ -26,6 +26,7 @@
         <module>_restful</module>
         <module>_parse.xml</module>
         <module>_parse.json</module>
+        <module>api</module>
     </modules>
 
     <properties>

@@ -3,11 +3,11 @@ package com.wetts.parserjson.jackson;
 import java.io.IOException;
 import java.util.Map;
 
-import parserJson.ParserJson;
-import parserJson.Person;
+import com.wetts.parserjson.ParserJson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.wetts.parserjson.Person;
 
 public class JacksonParser implements ParserJson {
 
