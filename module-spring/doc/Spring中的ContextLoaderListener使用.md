@@ -12,9 +12,4 @@
 </context-param> 
 ```
 
-在ContextLoaderListener中关联了ContextLoader这个类，所以整个加载配置过程由ContextLoader来完成。看看它的API说明
-第一段说明ContextLoader可以由 ContextLoaderListener和ContextLoaderServlet生成。如果查看ContextLoaderServlet的API，可以看到它也关联了ContextLoader这个类而且它实现了HttpServlet。这个接口
-    第二段，ContextLoader创建的是 XmlWebApplicationContext这样一个类，它实现的接口是WebApplicationContext->ConfigurableWebApplicationContext->ApplicationContext->
-BeanFactory这样一来spring中的所有bean都由这个类来创建
- 
 IUploaddatafileManager uploadmanager = (IUploaddatafileManager) ContextLoaderListener.getCurrentWebApplicationContext().getBean("uploadManager");

@@ -51,6 +51,10 @@
         <param-name>log4jRefreshInterval</param-name>
         <param-value>6000</param-value>
     </context-param>
+    <!-- Spring 刷新Introspector防止内存泄露 清除JavaBeans Introspector（第一个注册） -->
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
     <listener>
         <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
     </listener>
@@ -58,18 +62,6 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <!-- Spring 刷新Introspector防止内存泄露 清除JavaBeans Introspector -->
-    <listener>
-        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
-    </listener>
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>default.html</welcome-file>
-        <welcome-file>default.htm</welcome-file>
-        <welcome-file>default.jsp</welcome-file>
-    </welcome-file-list>
     <error-page>
         <error-code>403</error-code>
         <location>/WEB-INF/view/exception/500.jsp</location>

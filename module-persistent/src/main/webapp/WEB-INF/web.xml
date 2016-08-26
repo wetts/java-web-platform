@@ -57,29 +57,4 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
-        <welcome-file>default.html</welcome-file>
-        <welcome-file>default.htm</welcome-file>
-        <welcome-file>default.jsp</welcome-file>
-    </welcome-file-list>
-    <error-page>
-        <error-code>403</error-code>
-        <location>/WEB-INF/view/exception/500.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>404</error-code>
-        <location>/WEB-INF/view/exception/404.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>405</error-code>
-        <location>/WEB-INF/view/exception/404.jsp</location>
-    </error-page>
-    <error-page>
-        <error-code>500</error-code>
-        <location>/WEB-INF/view/exception/500.jsp</location>
-    </error-page>
 </web-app>
