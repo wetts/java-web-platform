@@ -17,15 +17,15 @@
         <module>plugin-poi</module>
 
         <module>application</module>
-        <module>httpKeepAlive</module>
-        <module>crawler</module>
+        <module>example-httpKeepAlive</module>
+        <module>example-restful</module>
+        <module>example-crawler</module>
+        <module>example-parse.xml</module>
+        <module>example-parse.json</module>
 
         <module>_java.core</module>
         <module>_algorithm</module>
         <module>_design.pattern</module>
-        <module>_restful</module>
-        <module>_parse.xml</module>
-        <module>_parse.json</module>
         <module>api</module>
     </modules>
 
