@@ -5,3 +5,5 @@
 5. 检查过时（是否有新版本）：brew outdated 这回列出所有安装的软件里可以升级的那些
 6. 升级：brew upgrade 升级所有可以升级的软件们
 7. 清理：brew cleanup 清理不需要的版本极其安装包缓存
+8. 安装包：brew install
+9. 卸载包：brew uninstall
