@@ -49,6 +49,14 @@
 - varStatus:代表循环状态的变量名称(每个对象的状态)
     必需:否
     默认值:无
+    index       getIndex()               当前这次迭代从 0 开始的迭代索引
+    count       getCount()             当前这次迭代从 1 开始的迭代计数
+    first          isFirst()                  用来表明当前这轮迭代是否为第一次迭代的标志
+    last          isLast()                  用来表明当前这轮迭代是否为最后一次迭代的标志
+    begin      getBegin()             begin 属性值
+    end         getEnd()                 end 属性值
+    step        getStep()                step 属性值
+
 
 <c:forTokens>标签与<c:forEach>标签有相似的属性，不过<c:forTokens>还有另一个属性：
 
