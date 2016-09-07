@@ -26,7 +26,6 @@
         <module>_java.core</module>
         <module>_algorithm</module>
         <module>_design.pattern</module>
-        <module>api</module>
     </modules>
 
     <properties>

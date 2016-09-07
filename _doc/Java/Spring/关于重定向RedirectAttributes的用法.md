@@ -53,3 +53,13 @@ public List<Student> list(@RequestPrama(value = "prama1")String  prama1,
 }
 ```
 通过在controller中的list方法体中可以获取到参数值。
+
+---
+
+```
+public String save(@ModelAttribute("group") Group group, RedirectAttributes redirectAttributes) {
+	accountManager.saveGroup(group);
+	redirectAttributes.addFlashAttribute("message", "修改权限组成功");
+	return "redirect:/account/group/";
+}
+```
