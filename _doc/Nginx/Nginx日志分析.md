@@ -50,4 +50,11 @@ sed -n ‘/5/Nov/2010/,/5/Dec/2010/ p’ access.log | goaccess -s -b
 
 # 通过调用本地的goaccess程序来分析服务器上的日志
 ssh user@server 'cat /var/log/apache2/access.log' | goaccess -s -a -b
+
+# 获取某个时间段的日志
+# 方法1：sed
+cat access_nginx.log | egrep "12/Sep/2016" | sed  -n '/09:00:00/,/09:30:00/p'
+# 方法二：awk
+cat web.log | egrep "01/Apr/2014" | awk -F':' '$2 = 21 && $3 >= 30 && $3 <= 50'
+
 ```
