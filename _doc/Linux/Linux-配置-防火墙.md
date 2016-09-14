@@ -1,3 +1,14 @@
+### 关闭开启
+```
+1) 重启后生效 
+开启： chkconfig iptables on 
+关闭： chkconfig iptables off 
+
+2) 即时生效，重启后失效 
+开启： service iptables start 
+关闭： service iptables stop 
+```
+
 ### 1> 查看
 ```
 iptables -nvL –line-number

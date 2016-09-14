@@ -1,3 +1,9 @@
+## libtool: link: `ext/date/php_date.lo' is not a valid libtool object
+./configure 后，直接make可能会出现libtool: link: `ext/date/php_date.lo' is not a valid libtool object 的错误。
+
+make clean 一下然后再make，即可。
+
+## undefined reference to `libiconv'
 ```
 ext/gd/libgd/.libs/gdkanji.o: In function `do_convert':
 /root/php-5.2.12/ext/gd/libgd/gdkanji.c:350: undefined reference to `libiconv_open'
@@ -68,5 +74,3 @@ EXTRA_LIBS = -lcrypt ...
 
 在最后添加-liconv
 ```
-
----
