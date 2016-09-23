@@ -1,5 +1,5 @@
-## 慢查询日志
-### 配置
+# 慢查询日志
+## 配置
 #### 方法一：
 1. 找到mysql的配置文件my.cnf
 2. 在[mysqld]下方加入慢查询的配置语句
@@ -17,7 +17,7 @@ log-queries-not-using-indexes
 1. 执行 ***set global log_slow_queries = on***;
 > 慢日志默认放在MySQL目录下，记录执行时间超过2s的sql
 
-### 分析
+## 日志分析
 慢日志分析命令为 ***mysqldumpslow*** 
 - 参数：
 ```
