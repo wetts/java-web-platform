@@ -32,41 +32,6 @@
             <version>${jsp-api.version}</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
-    <build>
-        <finalName>application</finalName>
-        <plugins>
-            <!-- 合并多个war -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <!--<packagingExcludes>WEB-INF/web.xml</packagingExcludes>-->
-                    <overlays>
-                        <overlay>
-                            <groupId>com.wettsw</groupId>
-                            <artifactId>module-auth</artifactId>
 
-                            <includes>
-                                <include>WEB-INF/index.jsp</include>
-                            </includes>
-                            <excludes>
-                                <exclude>WEB-INF/classes/com/wetts/Ttest.class</exclude>
-                            </excludes>
-                        </overlay>
-                    </overlays>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>

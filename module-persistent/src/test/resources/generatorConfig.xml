@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <!--导入属性配置 -->
-    <!--<properties resource="generator.properties"></properties>-->
-    <properties url="file:////Users/wetts/work/_workspace/Java/java-web-platform/module-persistent/src/test/resources/generator.properties"></properties>
+    <properties resource="generator.properties"></properties>
+    <!--<properties url="file:////Users/wetts/work/_workspace/Java/java-web-platform/module-persistent/src/test/resources/generator.properties"></properties>-->
 
     <!--指定特定数据库的jdbc驱动jar包的位置 -->
     <classPathEntry location="${jdbc.driverLocation}"/>
@@ -89,7 +89,7 @@
 
 
 
-        <table domainObjectName="CheckRecord" tableName="FDS_TB_CHECKRECORD" schema="fds" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table domainObjectName="ParentVideoDate" tableName="parent_video_date" schema="" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
 
             <!-- optional   , only for mybatis3 runtime
                  自动生成的键值（identity,或者序列值）

@@ -1,1 +1,0 @@
-在Tomcat的conf文件夹里有个server.xml文件，修改里面的<Connector port="80"
