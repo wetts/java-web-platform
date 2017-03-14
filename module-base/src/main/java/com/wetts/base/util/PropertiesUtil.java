@@ -152,9 +152,8 @@ public class PropertiesUtil {
     }
 
 	/*
-	 * List属性值读写
+     * List属性值读写
 	 */
-
     public static boolean setProperty(String filePath, String fileName,
                                       String propertyName, List<String> propertyValueList) {
         try {

@@ -8,10 +8,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>plugin-poi</artifactId>
-    <packaging>jar</packaging>
 
     <name>plugin-poi</name>
     <url>http://maven.apache.org</url>
+
+    <properties>
+        <!-- Java API To Access Microsoft Format Files -->
+        <poi.version>3.9</poi.version>
+        <poi-ooxml.version>3.15-beta2</poi-ooxml.version>
+    </properties>
 
     <dependencies>
         <dependency>

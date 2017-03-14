@@ -7,7 +7,7 @@
 
     <import resource="classpath:spring-context.xml"/>
 
-    <import resource="classpath:persistent-context.xml"/>
+    <import resource="classpath:spring-context-db.xml"/>
 
     <context:property-placeholder location="classpath:auth-config.properties" ignore-unresolvable="true"/>
 

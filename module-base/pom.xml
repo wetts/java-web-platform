@@ -7,9 +7,22 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>module-base</artifactId>
-    <packaging>war</packaging>
+
     <name>module-base Maven Webapp</name>
     <url>http://maven.apache.org</url>
+
+    <properties>
+        <commons-lang3.version>3.4</commons-lang3.version>
+
+        <!-- JSON操作 -->
+        <jackson.version>2.7.3</jackson.version>
+
+        <!-- 日志 -->
+        <slf4j.version>1.7.7</slf4j.version>
+        <slf4j-api.version>1.7.10</slf4j-api.version>
+        <log4j.version>1.2.17</log4j.version>
+        <logback.version>1.1.2</logback.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -57,19 +70,6 @@
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-jaxb-annotations</artifactId>
             <version>${jackson.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jsp-api</artifactId>
-            <version>2.0</version>
-            <scope>provided</scope>
         </dependency>
     </dependencies>
 
