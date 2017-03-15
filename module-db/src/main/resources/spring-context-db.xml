@@ -12,12 +12,12 @@
     <context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
 
     <!--<bean id="springCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">-->
-        <!--<property name="cacheManager" ref="ehcacheManager"/>-->
+    <!--<property name="cacheManager" ref="ehcacheManager"/>-->
     <!--</bean>-->
 
     <!--&lt;!&ndash;ehcache&ndash;&gt;-->
     <!--<bean id="ehcacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">-->
-        <!--<property name="configLocation" value="classpath:ehcache.xml"/>-->
+    <!--<property name="configLocation" value="classpath:ehcache.xml"/>-->
     <!--</bean>-->
 
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -57,7 +57,12 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
-        <!--<property name="typeAliasesPackage" value="com.wetts.application.entity"/>-->
+        <!-- 配置MyBatis
+            typeAliasesPackage 扫描哪个包下的域对象
+            typeAliasesSuperType 扫描包以下面的这个类作为父类的域对象
+        -->
+        <property name="typeAliasesPackage" value="com.wetts.application.entity"/>
+        <property name="typeAliasesSuperType" value="com.wetts.application.entity.base.BaseEntity"/>
         <!-- 自动扫描mapping.xml文件 -->
         <property name="mapperLocations">
             <array>
