@@ -6,7 +6,7 @@ package com.wetts.application.entity.base;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wetts.application.entity.sys.User;
-import com.wetts.base.util.IdGen;
+import com.wetts.base.utils.IdGen;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 

@@ -1,5 +1,6 @@
 package com.wetts.base.util.image;
 
+import com.wetts.base.utils.image.ImageUtils;
 import junit.framework.TestCase;
 
 import java.awt.*;

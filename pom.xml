@@ -13,12 +13,13 @@
         <module>module-db</module>
         <module>module-spring</module>
         <module>module-spring-redis</module>
+        <module>module-spring-ehcache</module>
 
         <module>plugin-email</module>
         <module>plugin-poi</module>
+        <module>plugin-dynamicDatasource</module>
 
         <module>application</module>
-        <module>plugin-dynamicDatasource</module>
     </modules>
 
     <properties>

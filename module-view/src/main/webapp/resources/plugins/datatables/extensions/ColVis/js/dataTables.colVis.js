@@ -1049,7 +1049,7 @@ ColVis.aInstances = [];
 
 /**
  * Name of this class
- *  @constant CLASS
+ *  @constants CLASS
  *  @type     String
  *  @default  ColVis
  */
@@ -1058,7 +1058,7 @@ ColVis.prototype.CLASS = "ColVis";
 
 /**
  * ColVis version
- *  @constant  VERSION
+ *  @constants  VERSION
  *  @type      String
  *  @default   See code
  */

@@ -4,8 +4,8 @@
 package com.wetts.application.entity.base;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.wetts.base.util.Reflections;
-import com.wetts.base.util.StringUtils;
+import com.wetts.base.utils.Reflections;
+import com.wetts.base.utils.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;

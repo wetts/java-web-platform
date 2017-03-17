@@ -716,7 +716,7 @@ DataTable.AutoFill = AutoFill;
 
 /**
  * AutoFill version
- *  @constant  version
+ *  @constants  version
  *  @type      String
  *  @default   See code
  */

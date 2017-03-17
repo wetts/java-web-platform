@@ -3,9 +3,8 @@
  */
 package com.wetts.application.entity.sys;
 
-import com.thinkgem.jeesite.common.persistence.DataEntity;
-import com.thinkgem.jeesite.common.utils.StringUtils;
 import com.wetts.application.entity.base.DataEntity;
+import com.wetts.base.utils.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import java.util.Date;

@@ -6,7 +6,7 @@ package com.wetts.application.entity.base;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Maps;
 import com.wetts.application.entity.sys.User;
-import com.wetts.base.util.StringUtils;
+import com.wetts.base.utils.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import javax.xml.bind.annotation.XmlTransient;

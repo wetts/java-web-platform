@@ -3,7 +3,6 @@
  */
 package com.wetts.application.entity.sys;
 
-import com.thinkgem.jeesite.common.persistence.TreeEntity;
 import com.wetts.application.entity.base.TreeEntity;
 import org.hibernate.validator.constraints.Length;
 

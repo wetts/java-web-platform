@@ -1,6 +1,6 @@
 package com.wetts;
 
-import com.wetts.base.util.SendEmailUtil;
+import com.wetts.base.utils.SendEmailUtil;
 import org.junit.Test;
 
 /**

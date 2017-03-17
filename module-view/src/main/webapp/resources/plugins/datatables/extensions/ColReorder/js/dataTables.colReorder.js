@@ -1283,7 +1283,7 @@ ColReorder.defaults = {
 
 /**
  * ColReorder version
- *  @constant  version
+ *  @constants  version
  *  @type      String
  *  @default   As code
  */

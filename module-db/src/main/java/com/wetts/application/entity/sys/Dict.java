@@ -3,7 +3,6 @@
  */
 package com.wetts.application.entity.sys;
 
-import com.thinkgem.jeesite.common.persistence.DataEntity;
 import com.wetts.application.entity.base.DataEntity;
 import org.hibernate.validator.constraints.Length;
 

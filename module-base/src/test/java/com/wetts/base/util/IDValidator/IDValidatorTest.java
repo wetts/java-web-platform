@@ -1,5 +1,6 @@
 package com.wetts.base.util.IDValidator;
 
+import com.wetts.base.utils.IDValidator.IDValidator;
 import junit.framework.TestCase;
 
 /**

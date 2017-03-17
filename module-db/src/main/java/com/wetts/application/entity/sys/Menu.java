@@ -5,7 +5,6 @@ package com.wetts.application.entity.sys;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.thinkgem.jeesite.common.persistence.DataEntity;
 import com.wetts.application.entity.base.DataEntity;
 import org.hibernate.validator.constraints.Length;
 

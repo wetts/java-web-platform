@@ -1,7 +1,7 @@
 package com.wetts.application.service.impl;
 
 import com.wetts.application.service.RegisterByEmailService;
-import com.wetts.base.util.SendEmailUtil;
+import com.wetts.base.utils.SendEmailUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;

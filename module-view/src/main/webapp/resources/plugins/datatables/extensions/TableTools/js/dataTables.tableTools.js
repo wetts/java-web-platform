@@ -3106,7 +3106,7 @@ TableTools.defaults = TableTools.DEFAULTS;
 
 /**
  * Name of this class
- *  @constant CLASS
+ *  @constants CLASS
  *  @type	 String
  *  @default  TableTools
  */
@@ -3115,7 +3115,7 @@ TableTools.prototype.CLASS = "TableTools";
 
 /**
  * TableTools version
- *  @constant  VERSION
+ *  @constants  VERSION
  *  @type	  String
  *  @default   See code
  */

@@ -2,8 +2,8 @@ package com.wetts.base.database.dynamicsource;
 
 import com.wetts.base.database.dynamicsource.constants.DataSourceType;
 import com.wetts.base.database.dynamicsource.exception.NoDatabaseRouteException;
-import com.wetts.base.util.weight.WeightHelper;
-import com.wetts.base.util.weight.WeightMeta;
+import com.wetts.base.utils.weight.WeightHelper;
+import com.wetts.base.utils.weight.WeightMeta;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
