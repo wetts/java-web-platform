@@ -20,6 +20,7 @@
         <module>plugin-dynamicDatasource</module>
 
         <module>application</module>
+        <module>module-spring-mongodb</module>
     </modules>
 
     <properties>
