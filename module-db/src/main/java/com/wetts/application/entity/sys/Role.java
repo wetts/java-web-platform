@@ -3,11 +3,12 @@
  */
 package com.wetts.application.entity.sys;
 
-import com.google.common.collect.Lists;
 import com.wetts.application.entity.base.DataEntity;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -32,8 +33,8 @@ public class Role extends DataEntity<Role> {
 	private User user;		// 根据用户ID查询角色列表
 
 //	private List<User> userList = Lists.newArrayList(); // 拥有用户列表
-	private List<Menu> menuList = Lists.newArrayList(); // 拥有菜单列表
-	private List<Office> officeList = Lists.newArrayList(); // 按明细设置数据范围
+	private List<Menu> menuList = new ArrayList<>(); // 拥有菜单列表
+	private List<Office> officeList = new ArrayList<>(); // 按明细设置数据范围
 
 	// 数据范围（1：所有数据；2：所在公司及以下数据；3：所在公司数据；4：所在部门及以下数据；5：所在部门数据；8：仅本人数据；9：按明细设置）
 	public static final String DATA_SCOPE_ALL = "1";
@@ -163,7 +164,7 @@ public class Role extends DataEntity<Role> {
 	}
 
 	public List<String> getMenuIdList() {
-		List<String> menuIdList = Lists.newArrayList();
+		List<String> menuIdList = new ArrayList<>();
 		for (Menu menu : menuList) {
 			menuIdList.add(menu.getId());
 		}
@@ -171,7 +172,7 @@ public class Role extends DataEntity<Role> {
 	}
 
 	public void setMenuIdList(List<String> menuIdList) {
-		menuList = Lists.newArrayList();
+		menuList = new ArrayList<>();
 		for (String menuId : menuIdList) {
 			Menu menu = new Menu();
 			menu.setId(menuId);
@@ -184,10 +185,10 @@ public class Role extends DataEntity<Role> {
 	}
 	
 	public void setMenuIds(String menuIds) {
-		menuList = Lists.newArrayList();
+		menuList = new ArrayList<>();
 		if (menuIds != null){
 			String[] ids = StringUtils.split(menuIds, ",");
-			setMenuIdList(Lists.newArrayList(ids));
+			setMenuIdList(Arrays.asList(menuIds));
 		}
 	}
 	
@@ -200,7 +201,7 @@ public class Role extends DataEntity<Role> {
 	}
 
 	public List<String> getOfficeIdList() {
-		List<String> officeIdList = Lists.newArrayList();
+		List<String> officeIdList = new ArrayList<>();
 		for (Office office : officeList) {
 			officeIdList.add(office.getId());
 		}
@@ -208,7 +209,7 @@ public class Role extends DataEntity<Role> {
 	}
 
 	public void setOfficeIdList(List<String> officeIdList) {
-		officeList = Lists.newArrayList();
+		officeList = new ArrayList<>();
 		for (String officeId : officeIdList) {
 			Office office = new Office();
 			office.setId(officeId);
@@ -221,10 +222,10 @@ public class Role extends DataEntity<Role> {
 	}
 	
 	public void setOfficeIds(String officeIds) {
-		officeList = Lists.newArrayList();
+		officeList = new ArrayList<>();
 		if (officeIds != null){
 			String[] ids = StringUtils.split(officeIds, ",");
-			setOfficeIdList(Lists.newArrayList(ids));
+			setOfficeIdList(Arrays.asList(ids));
 		}
 	}
 	
@@ -232,7 +233,7 @@ public class Role extends DataEntity<Role> {
 	 * 获取权限字符串列表
 	 */
 	public List<String> getPermissions() {
-		List<String> permissions = Lists.newArrayList();
+		List<String> permissions = new ArrayList<>();
 		for (Menu menu : menuList) {
 			if (menu.getPermission()!=null && !"".equals(menu.getPermission())){
 				permissions.add(menu.getPermission());

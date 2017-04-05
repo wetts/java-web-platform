@@ -124,6 +124,7 @@
                 /login = authc
                 /logout = logout
                 /authenticated = authc
+                /aa = authcBasic
                 /** = user,sysUser
             </value>
         </property>

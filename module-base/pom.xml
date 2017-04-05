@@ -14,7 +14,6 @@
     <properties>
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-codec.version>1.10</commons-codec.version>
-        <google-collections.version>1.0-rc2</google-collections.version>
 
         <!-- JSON操作 -->
         <jackson.version>2.7.3</jackson.version>
@@ -44,12 +43,6 @@
             <artifactId>commons-codec</artifactId>
             <version>${commons-codec.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.google.collections</groupId>
-            <artifactId>google-collections</artifactId>
-            <version>${google-collections.version}</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.slf4j</groupId>

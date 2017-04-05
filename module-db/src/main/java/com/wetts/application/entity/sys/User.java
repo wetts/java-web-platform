@@ -5,13 +5,12 @@ package com.wetts.application.entity.sys;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.common.collect.Lists;
 import com.wetts.application.entity.base.DataEntity;
-import com.wetts.base.config.Global;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -47,11 +46,13 @@ public class User extends DataEntity<User> {
 
     private Role role;    // 根据角色查询用户条件
 
-    private List<Role> roleList = Lists.newArrayList(); // 拥有角色列表
+    private String encrypt;
+
+    private List<Role> roleList = new ArrayList<>(); // 拥有角色列表
 
     public User() {
         super();
-        this.loginFlag = Global.YES;
+        this.loginFlag = "1";
     }
 
     public User(String id) {
@@ -265,7 +266,7 @@ public class User extends DataEntity<User> {
 
     @JsonIgnore
     public List<String> getRoleIdList() {
-        List<String> roleIdList = Lists.newArrayList();
+        List<String> roleIdList = new ArrayList<>();
         for (Role role : roleList) {
             roleIdList.add(role.getId());
         }
@@ -273,7 +274,7 @@ public class User extends DataEntity<User> {
     }
 
     public void setRoleIdList(List<String> roleIdList) {
-        roleList = Lists.newArrayList();
+        roleList = new ArrayList<>();
         for (String roleId : roleIdList) {
             Role role = new Role();
             role.setId(roleId);
@@ -287,6 +288,14 @@ public class User extends DataEntity<User> {
 
     public static boolean isAdmin(String id) {
         return id != null && "1".equals(id);
+    }
+
+    public String getEncrypt() {
+        return encrypt;
+    }
+
+    public void setEncrypt(String encrypt) {
+        this.encrypt = encrypt;
     }
 
     @Override

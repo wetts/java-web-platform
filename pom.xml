@@ -8,19 +8,23 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>module-base</module>
-        <module>module-auth</module>
+
         <module>module-view</module>
         <module>module-db</module>
         <module>module-spring</module>
         <module>module-spring-redis</module>
         <module>module-spring-ehcache</module>
+        <module>module-spring-mongodb</module>
 
         <module>plugin-email</module>
         <module>plugin-poi</module>
         <module>plugin-dynamicDatasource</module>
 
         <module>application</module>
-        <module>module-spring-mongodb</module>
+
+        <module>module-auth-web</module>
+        <module>module-auth-api</module>
+        <module>module-api</module>
     </modules>
 
     <properties>

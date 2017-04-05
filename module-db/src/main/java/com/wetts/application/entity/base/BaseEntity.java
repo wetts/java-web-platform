@@ -4,13 +4,13 @@
 package com.wetts.application.entity.base;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.google.common.collect.Maps;
 import com.wetts.application.entity.sys.User;
 import com.wetts.base.utils.StringUtils;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -59,7 +59,7 @@ public abstract class BaseEntity<T> implements Serializable {
 	@XmlTransient
 	public Map<String, String> getSqlMap() {
 		if (sqlMap == null){
-			sqlMap = Maps.newHashMap();
+			sqlMap = new HashMap<>();
 		}
 		return sqlMap;
 	}
